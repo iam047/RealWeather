@@ -1,0 +1,1 @@
+{"version":3,"file":"mock.reducer.js","sourceRoot":"","sources":["../../src/reducers/mock.reducer.ts"],"names":[],"mappings":";;AAAA,0DAAmD;AACnD,gDAAgD;AAEhD,0CAA+C;AAE/C,2BAA2B;AAC3B,wCAAwC;AACxC,kBAAe,qBAAa,CAAC,sBAAY,CAAC,WAAW,EAAE;IACnD,CAAC,KAAK,CAAC,WAAW,CAAC,EAAE,CAAC,KAAkB,EAAE,EAAE,CAAC,mBACtC,KAAK,IACR,QAAQ,EAAE,CAAC,GAAG,KAAK,CAAC,QAAQ,CAAC,IAC/B;CACL,CAAC,CAAC"}

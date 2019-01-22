@@ -1,0 +1,11 @@
+export const NAV_BACK = 'NAV_BACK';
+export const NAV_TO_LOGIN = 'NAV_TO_LOGIN';
+export const NAV_TO_SELECT_LOGIN = 'NAV_TO_SELECT_LOGIN';
+export const NAV_TO_FORGOT_PASSWORD = 'NAV_TO_FORGOT_PASSWORD';
+export const NAV_TO_RESET_PASSWORD = 'NAV_TO_RESET_PASSWORD';
+export const NAV_TO_SIGN_UP = 'NAV_TO_SIGN_UP';
+export const NAV_TO_MAIN = 'NAV_TO_MAIN';
+export const NAV_DRAWER_OPEN = 'NAV_DRAWER_OPEN';
+export const NAV_DRAWER_CLOSE = 'NAV_DRAWER_CLOSE';
+export const NAV_BY_ROUTE_NAME = 'NAV_BY_ROUTE_NAME';
+export const NAV_TO_SUMMARY = 'NAV_TO_SUMMARY';

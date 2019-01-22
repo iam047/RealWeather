@@ -1,0 +1,1 @@
+{"version":3,"file":"AppNavigation.js","sourceRoot":"","sources":["../../src/navigation/AppNavigation.tsx"],"names":[],"mappings":";;AAAA,uDAAwD;AAExD,2CAA0C;AAC1C,yCAAyC;AAEzC,MAAM,UAAU,GAAG,uCAAoB,CAAC;IACpC,KAAK,EAAE,EAAE,MAAM,EAAE,eAAW,EAAE;IAC9B,IAAI,EAAG,EAAE,MAAM,EAAE,cAAU,EAAE;CAChC,EAAE;IACC,UAAU,EAAQ,MAAM;IACxB,gBAAgB,EAAE,MAAM;CAC3B,CAAC,CAAC;AAGH,kBAAe,UAAU,CAAC"}
