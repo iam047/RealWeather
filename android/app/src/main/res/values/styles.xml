@@ -1,8 +1,18 @@
 <resources>
 
-    <!-- Base application theme. -->
+    <!-- Base application themes. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:datePickerDialogTheme">@style/Date.Theme</item>
+        <!--Customize your themes here. -->
+    </style>
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
+
+    <style name="Date.Theme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/green</item>
+        <item name="android:textColorPrimary">@color/dark_green</item>
     </style>
 
 </resources>
