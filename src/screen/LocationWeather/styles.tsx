@@ -23,18 +23,21 @@ export default StyleSheet.create({
         fontWeight: fontWeight.medium,
 
     },
-    card:{
-        backgroundColor:'rgba(56, 172, 236, 1)',
-        borderWidth:0,
-        borderRadius:20
+    card: {
+        backgroundColor: 'rgba(56, 172, 236, 1)',
+        borderWidth: 0,
+        borderRadius: 20
     },
-    time:{
-        fontSize:38,
-        color:'#fff'
+    time: {
+        fontSize: 25,
+        color: '#fff'
     },
     notes: {
         fontSize: 18,
-        color:'#fff',
-        textTransform:'capitalize'
+        color: '#fff',
+    },
+    contentWrapper: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     }
 });

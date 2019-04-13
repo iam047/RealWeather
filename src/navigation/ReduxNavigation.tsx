@@ -1,18 +1,20 @@
-import * as React                              from 'react';
-import { BackHandler }                         from 'react-native';
-import { NavigationDispatch, NavigationState } from 'react-navigation';
-import { reduxifyNavigator }                   from 'react-navigation-redux-helpers';
-import { connect }                             from 'react-redux';
-import { bindActionCreators }                  from 'redux';
+import * as React from 'react';
+import {BackHandler} from 'react-native';
+import {NavigationDispatch, NavigationState} from 'react-navigation';
+import {reduxifyNavigator} from 'react-navigation-redux-helpers';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
-import { IInitialState }             from '../store/initialStateTypes';
-import AppNavigation                 from './AppNavigation';
+import {IInitialState} from '../store/initialStateTypes';
+import AppNavigation from './AppNavigation';
+import {navBack} from "../actions";
 
 const Navigation = reduxifyNavigator(AppNavigation, 'root');
 
 interface IProps {
     state: NavigationState;
     dispatch: NavigationDispatch;
+    navBack: () => {};
 }
 
 class ReduxNavigation extends React.Component<IProps> {
@@ -24,10 +26,7 @@ class ReduxNavigation extends React.Component<IProps> {
         BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
     }
 
-    onBackPress = () => {
-        console.log('222')
-
-    };
+    onBackPress = () => this.props.navBack();
 
     render() {
         const { state, dispatch } = this.props;
@@ -41,7 +40,7 @@ const mapStateToProps = ({ navReducer }: IInitialState) => ({
 });
 
 const mapDispatchToProps = (dispatch: any) => bindActionCreators(
-    { dispatch },
+    { dispatch, navBack },
     dispatch,
 );
 

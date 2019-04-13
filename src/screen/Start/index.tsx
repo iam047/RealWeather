@@ -1,31 +1,47 @@
-import React                            from 'react';
-import { connect }                      from 'react-redux';
-import { Text, View, TouchableOpacity } from 'react-native';
-import config                           from 'react-native-config';
+import React from 'react';
+import {connect} from 'react-redux';
+import {
+    Text,
+    View,
+    ImageBackground,
+    FlatList
+} from 'react-native';
 
-import { IStartProps, IStartState } from './types';
-import { navBack }                  from '../../actions';
-import styles                       from './styles';
+import {IStartProps, IStartState} from './types';
+import {navBack, findCityWeather} from '../../actions';
+import styles from './styles';
+import * as image from "../../resources/images/images";
+import {IInitialState} from "../../store/initialStateTypes";
+import ForecastCard from "../../components/ContestCard";
 
 class StartScreen extends React.Component<IStartProps, IStartState> {
-    componentDidMount() {
-        fetch(`https://api.darksky.net/forecast/${config.API_DARKSKY_NET_KEY}/49.42854,32.06207`)
-            .then(response => response.json())
-            .then(date => console.log(JSON.stringify({ date }, null, 4)))
-            .catch(error => {
-                console.log('error', error);
-            });
-    }
 
     render() {
+        const {dataCityWeather: {city: {name, population}, list},} = this.props;
         return (
-            <View style={ styles.container }>
-                <TouchableOpacity onPress={ () => this.props.navBack() }>
-                    <Text>StartScreen </Text>
-                </TouchableOpacity>
-            </View>
+            <ImageBackground
+                style={{flex: 1}}
+                source={image.backgroundImage}
+                resizeMode="cover"
+            >
+                <View style={styles.container}>
+                    <View style={{marginTop: 40, justifyContent: 'center', alignItems: 'center'}}>
+                        <Text style={styles.textCityName}>{name}</Text>
+                        <Text style={{fontSize: 15, color: 'grey'}}>Population of the city {population}</Text>
+                    </View>
+                </View>
+                <FlatList
+                    data={list}
+                    style={{marginTop: 20}}
+                    keyExtractor={item => item.dt_txt}
+                    renderItem={({item}) => <ForecastCard detail={item} location={name}/>}/>
+            </ImageBackground>
         );
     }
 }
 
-export default connect(null, { navBack })(StartScreen);
+const mapStateToProps = ({weatherReducer}: IInitialState) => ({
+    dataCityWeather: weatherReducer.dataCityWeather,
+});
+
+export default connect(mapStateToProps, {findCityWeather, navBack})(StartScreen);
